@@ -12,7 +12,8 @@ namespace AspNetCoreMvc.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            HelloModel m = new HelloModel() { HelloMessage = "Hello, Alex!" };
+            return View(m);
         }
 
         public IActionResult About()
