@@ -1,0 +1,10 @@
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.deps.json
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.dll
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.csproj.CoreCompileInputs.cache
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.AssemblyInfoInputs.cache
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.AssemblyInfo.cs
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.pdb
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.dll
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.pdb
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.runtimeconfig.json
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.runtimeconfig.dev.json
