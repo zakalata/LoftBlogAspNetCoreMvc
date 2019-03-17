@@ -5,15 +5,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreMvc.Models;
+using DataLayer;
+using DataLayer.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreMvc.Controllers
 {
     public class HomeController : Controller
     {
+        private EFDBContext context;
+
+        public HomeController(EFDBContext context)
+        {
+            this.context = context;
+        }
+
         public IActionResult Index()
         {
             HelloModel m = new HelloModel() { HelloMessage = "Hello, Alex!" };
-            return View(m);
+            List<Directory> dirs = context.Directories.Include(x => x.Materials).ToList();
+            return View(dirs);
         }
 
         public IActionResult About()
