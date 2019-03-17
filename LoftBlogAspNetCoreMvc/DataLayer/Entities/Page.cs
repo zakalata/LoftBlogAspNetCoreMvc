@@ -8,6 +8,6 @@ namespace DataLayer.Entities
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public int Html { get; set; }
+        public string Html { get; set; }
     }
 }

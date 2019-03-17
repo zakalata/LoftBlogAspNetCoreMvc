@@ -8,3 +8,4 @@ E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\obj\Debug\n
 E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.pdb
 E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.runtimeconfig.json
 E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\bin\Debug\netcoreapp2.1\DataLayer.runtimeconfig.dev.json
+E:\Work\GitHub\LoftBlogAspNetCoreMvc\LoftBlogAspNetCoreMvc\DataLayer\obj\Debug\netcoreapp2.1\DataLayer.csprojAssemblyReference.cache
