@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLayer;
+using BusinessLayer.Implementation;
+using BusinessLayer.Interfaces;
 using DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,8 +37,10 @@ namespace AspNetCoreMvc
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<EFDBContext>(options =>
-                options.UseSqlServer(connection, b => b.MigrationsAssembly("DataLayer")));
+            services.AddDbContext<EFDBContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("DataLayer")));
+            services.AddTransient<IDirectoriesRepository, EFDirectoriesRepository>();
+            services.AddTransient<IMaterialsRepository, EFMaterialsRepository>();
+            services.AddScoped<DataManager>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

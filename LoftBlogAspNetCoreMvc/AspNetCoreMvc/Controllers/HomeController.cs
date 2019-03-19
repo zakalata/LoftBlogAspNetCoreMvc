@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreMvc.Models;
+using BusinessLayer;
+using BusinessLayer.Interfaces;
 using DataLayer;
 using DataLayer.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -13,17 +15,22 @@ namespace AspNetCoreMvc.Controllers
 {
     public class HomeController : Controller
     {
-        private EFDBContext context;
-
-        public HomeController(EFDBContext context)
+        //private EFDBContext context;
+        //private IDirectoriesRepository dirRep;
+        private DataManager dataManager;
+        public HomeController(/*EFDBContext context, IDirectoriesRepository dirRep,*/ DataManager dm)
         {
-            this.context = context;
+            //this.context = context;
+            //this.dirRep = dirRep;
+            this.dataManager = dm;
         }
 
         public IActionResult Index()
         {
-            HelloModel m = new HelloModel() { HelloMessage = "Hello, Alex!" };
-            List<Directory> dirs = context.Directories.Include(x => x.Materials).ToList();
+            //HelloModel m = new HelloModel() { HelloMessage = "Hello, Alex!" };
+            //List<Directory> dirs = context.Directories.Include(x => x.Materials).ToList();
+            //List<Directory> dirs = dirRep.GetAllDirectorys().ToList();
+            List<Directory> dirs = dataManager.Directorys.GetAllDirectorys(true).ToList();
             return View(dirs);
         }
 

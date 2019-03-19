@@ -9,6 +9,8 @@ namespace DataLayer
 {
     public class EFDBContext : DbContext
     {
+        public object Directory;
+
         public DbSet<Directory> Directories { get; set; }
         public DbSet<Material> Materials { get; set; }
 

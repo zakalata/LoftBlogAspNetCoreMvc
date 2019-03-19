@@ -1,20 +1,22 @@
-﻿@model List<DataLayer.Entities.Directory>
+﻿@using DataLayer.Entities
+@model List<Directory>
 
 @{
+    List<Directory> m = Model;
     ViewData["Title"] = "Home Page";
 }
 
 <div class="row">
     <div class="col-md-12">
         <ul>
-            @foreach (var m in Model)
+            @foreach (var directory in m)
             {
                 <li>
-                    <h3>@m.Title</h3>
+                    <h3>@directory.Title</h3>
                     <ul>
-                        @if (m.Materials != null)
+                        @if (directory.Materials != null)
                         {
-                            foreach (var sub in m.Materials)
+                            foreach (var sub in directory.Materials)
                             {
                                 <li>
                                     @sub.Title
@@ -33,7 +35,7 @@
 
 
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+@*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -122,4 +124,4 @@
             <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
         </ul>
     </div>
-</div>
+</div>*@
