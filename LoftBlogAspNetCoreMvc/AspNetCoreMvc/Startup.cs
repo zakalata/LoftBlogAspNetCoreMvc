@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PresentationLayer;
 
 namespace AspNetCoreMvc
 {
@@ -41,6 +42,7 @@ namespace AspNetCoreMvc
             services.AddTransient<IDirectoriesRepository, EFDirectoriesRepository>();
             services.AddTransient<IMaterialsRepository, EFMaterialsRepository>();
             services.AddScoped<DataManager>();
+            //services.AddScoped<ServicesManager>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -10,6 +10,8 @@ using BusinessLayer.Interfaces;
 using DataLayer;
 using DataLayer.Entities;
 using Microsoft.EntityFrameworkCore;
+using PresentationLayer;
+using PresentationLayer.Models;
 
 namespace AspNetCoreMvc.Controllers
 {
@@ -17,12 +19,14 @@ namespace AspNetCoreMvc.Controllers
     {
         //private EFDBContext context;
         //private IDirectoriesRepository dirRep;
-        private DataManager dataManager;
+        private DataManager _datamanager;
+        private ServicesManager _servicesmanager;
         public HomeController(/*EFDBContext context, IDirectoriesRepository dirRep,*/ DataManager dm)
         {
             //this.context = context;
             //this.dirRep = dirRep;
-            this.dataManager = dm;
+            this._datamanager = dm;
+            _servicesmanager = new ServicesManager(_datamanager);
         }
 
         public IActionResult Index()
@@ -30,8 +34,9 @@ namespace AspNetCoreMvc.Controllers
             //HelloModel m = new HelloModel() { HelloMessage = "Hello, Alex!" };
             //List<Directory> dirs = context.Directories.Include(x => x.Materials).ToList();
             //List<Directory> dirs = dirRep.GetAllDirectorys().ToList();
-            List<Directory> dirs = dataManager.Directorys.GetAllDirectorys(true).ToList();
-            return View(dirs);
+            //List<Directory> dirs = dataManager.Directorys.GetAllDirectorys(true).ToList();
+            List<DirectoryViewModel> _dirs = _servicesmanager.Directorys.GetDirectoryesList();
+            return View(_dirs);
         }
 
         public IActionResult About()
