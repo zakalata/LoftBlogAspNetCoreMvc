@@ -4,13 +4,14 @@
 
 @model List<DirectoryViewModel>
 @{
+    List<DirectoryViewModel> m = Model;
     ViewData["Title"] = "Home Page";
 }
 <<div class="row">
     <div class="col-md-12">
         @*<h1>@Model.HelloMessage</h1>*@
         <ul>
-            @foreach (var item in Model)
+            @foreach (var item in m)
             {
                 <li>
                     <h2>

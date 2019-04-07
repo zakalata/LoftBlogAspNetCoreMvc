@@ -13,7 +13,9 @@
         {
             foreach (var subItem in _currentModel.Materials)
             {
-                <li><a asp-action="Index" asp-controller="Page" asp-route-pageId="@subItem.Material.Id" asp-route-pageType="@PageEnums.PageType.Material">@subItem.Material.Title</a></li>
+                <li>
+                    <a asp-action="Index" asp-controller="Page" asp-route-pageId="@subItem.Material.Id" asp-route-pageType="@PageEnums.PageType.Material">@subItem.Material.Title</a>
+                </li>
             }
         }
     </ul>

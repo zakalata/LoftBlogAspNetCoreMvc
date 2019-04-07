@@ -71,7 +71,7 @@ namespace PresentationLayer.Services
 
             return DirectoryDBToViewModelById(_directoryDbModel.Id);
         }
-
+        
         public DirectoryEditModel CreateNewDirectoryEditModel()
         {
             return new DirectoryEditModel();

@@ -35,20 +35,36 @@ namespace AspNetCoreMvc.Controllers
             return View(_viewModel);
         }
         [HttpGet]
-        public IActionResult PageEditor(int pageId, PageEnums.PageType pType)
+        public IActionResult PageEditor(int pageId, PageEnums.PageType pageType, int directoryId = 0)
         {
             PageEditModel editModel = null;
-            switch (pType)
+            switch (pageType)
             {
                 case PageEnums.PageType.Directory:
-                    editModel = _servicesManager.Directorys.GetDirectoryEdetModel(pageId);
+                    editModel = pageId != 0 ? _servicesManager.Directorys.GetDirectoryEdetModel(pageId)
+                        : _servicesManager.Directorys.CreateNewDirectoryEditModel();
                     break;
                 case PageEnums.PageType.Material:
-                    editModel = _servicesManager.Materials.GetMaterialEditModel(pageId);
+                    editModel = pageId != 0 ? _servicesManager.Materials.GetMaterialEditModel(pageId)
+                        : _servicesManager.Materials.CreateNewMaterialEditModel(directoryId);
                     break;
             }
-            ViewBag.PageType = pType;
+            ViewBag.PageType = pageType;
             return View(editModel);
+        }
+
+        [HttpPost]
+        public IActionResult SaveDirectory(DirectoryEditModel model)
+        {
+            _servicesManager.Directorys.SaveDirectoryEditModelToDb(model);
+            return RedirectToAction("PageEditor", "Page", new { pageId = model.Id, pageType = PageEnums.PageType.Directory });
+        }
+
+        [HttpPost]
+        public IActionResult SaveMaterial(MaterialEditModel model)
+        {
+            _servicesManager.Materials.SaveMaterialEditModelToDb(model);
+            return RedirectToAction("PageEditor", "Page", new { pageId = model.Id, pageType = PageEnums.PageType.Material });
         }
 
     }
